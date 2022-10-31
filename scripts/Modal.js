@@ -2,8 +2,11 @@ const ModalTrigger = (shortText, dialogText, callback) => {
   const button = document.createElement('button');
   button.addEventListener('click', openModal(dialogText, callback));
   button.innerHTML = shortText;
-  console.log('wat');
   return button;
+};
+
+const closeModal = () => {
+  document.querySelector('div.modalWrapper').remove();
 };
 
 const openModal = (message, callback) => {
@@ -20,9 +23,7 @@ const openModal = (message, callback) => {
 
     const cancelButton = document.createElement('button');
     cancelButton.append('Cancel');
-    cancelButton.addEventListener('click', () => {
-      console.log('closing');
-    });
+    cancelButton.addEventListener('click', closeModal);
 
     modalWrapper.append(modal);
     modalWrapper.append(confirmButton);

@@ -6,6 +6,10 @@ const mainRef = document.querySelector('main');
 
 // mainRef.append(modal.buttonTrigger());
 
-mainRef.append(ModalTrigger('click me!', 'Are you sure you want to continue?'));
+mainRef.append(
+  ModalTrigger('click me!', 'Are you sure you want to continue?', () => {
+    console.log('yes clicked');
+  })
+);
 
 console.log('running');
