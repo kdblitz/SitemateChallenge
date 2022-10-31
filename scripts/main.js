@@ -23,4 +23,21 @@ mainRef.append(
   )
 );
 
+mainRef.append(
+  ModalTrigger(
+    'another!',
+    'Second message',
+    () => {
+      const p = document.createElement('p');
+      p.append('You just clicked "Yes"');
+      mainRef.append(p);
+    },
+    () => {
+      const p = document.createElement('p');
+      p.append('You just clicked "Cancel"');
+      mainRef.append(p);
+    }
+  )
+);
+
 console.log('running');
