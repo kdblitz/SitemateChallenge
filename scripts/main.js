@@ -1,4 +1,4 @@
-import { ModalTrigger } from './Modal.js';
+import Modal from './Modal.js';
 
 const mainRef = document.querySelector('main');
 
@@ -6,36 +6,36 @@ const mainRef = document.querySelector('main');
 
 // mainRef.append(modal.buttonTrigger());
 
-mainRef.append(
-  ModalTrigger(
-    'click me!',
-    'Are you sure you want to continue?',
-    () => {
-      const p = document.createElement('p');
-      p.append('You just clicked "Yes"');
-      mainRef.append(p);
-    },
-    () => {
-      const p = document.createElement('p');
-      p.append('You just clicked "Cancel"');
-      mainRef.append(p);
-    }
-  )
+const myModal = new Modal(
+  'click me!',
+  'Are you sure you want to continue?',
+  () => {
+    const p = document.createElement('p');
+    p.append('You just clicked "Yes"');
+    mainRef.append(p);
+  },
+  () => {
+    const p = document.createElement('p');
+    p.append('You just clicked "Cancel"');
+    mainRef.append(p);
+  }
 );
 
-// mainRef.append(
-//   ModalTrigger(
-//     'another!',
-//     'Second message',
-//     () => {
-//       const p = document.createElement('p');
-//       p.append('You just clicked "Yes"');
-//       mainRef.append(p);
-//     },
-//     () => {
-//       const p = document.createElement('p');
-//       p.append('You just clicked "Cancel"');
-//       mainRef.append(p);
-//     }
-//   )
-// );
+mainRef.append(myModal.modalTrigger());
+
+const mod = new Modal(
+  'another!',
+  'Second message',
+  () => {
+    const p = document.createElement('p');
+    p.append('You just clicked "Yes"');
+    mainRef.append(p);
+  },
+  () => {
+    const p = document.createElement('p');
+    p.append('You just clicked "Cancel"');
+    mainRef.append(p);
+  }
+);
+
+mainRef.append(mod.modalTrigger());
