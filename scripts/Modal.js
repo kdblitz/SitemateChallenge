@@ -26,6 +26,9 @@ const openModal = (message, confirmCallback, cancelCallback) => {
     const modal = document.createElement('div');
     modal.classList.add('modal');
 
+    const messageArea = document.createElement('p');
+    messageArea.append(message);
+
     const confirmButton = document.createElement('button');
     confirmButton.append('Yes');
     confirmButton.addEventListener('click', () => {
@@ -40,7 +43,7 @@ const openModal = (message, confirmCallback, cancelCallback) => {
       cancelCallback();
     });
 
-    modal.append(message, confirmButton, cancelButton);
+    modal.append(messageArea, confirmButton, cancelButton);
 
     modalWrapper.append(modal);
 

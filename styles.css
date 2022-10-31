@@ -11,8 +11,33 @@
 
 .modal {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 33%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: modaldisplay;
+  animation-duration: 0.4s;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal p {
+  flex: 0 0 100%;
+}
+
+.modal button {
+  flex: 1 0 auto;
+  margin: 20px;
+}
+
+@keyframes modaldisplay {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
